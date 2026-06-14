@@ -3,7 +3,7 @@ import 'dart:io';
 // This is the function which checks wheter the gae is valid or not the age muxt be in between 1990-2026
 bool validyear(int birthyear) {
   int currentyear = 2026;
-  if (birthyear < 1990 || birthyear > currentyear) {
+  if (birthyear < 1800 || birthyear > currentyear) {
     return false;
   }
   return true;
@@ -40,7 +40,7 @@ void main() {
     print("You are not an Adult");
   }
   // Bool directly in condition
-  bool isSenior = age >= 60;
+  bool isSenior = age >= 40;
   if (isSenior) {
     print('You are also a Senior Citizen.');
   }
