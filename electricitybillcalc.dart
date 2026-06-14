@@ -29,8 +29,8 @@ void main() {
         ((units - 300) * (pricePerUnit + 13.0));
   }
 
-  // Add 10% tax on the base bill
-  double tax = bill * 0.10;
+  // Add 25% tax on the base bill
+  double tax = bill * 0.25;
   double total = bill + tax;
 
   // Display result card
@@ -39,8 +39,8 @@ void main() {
   print("==============================");
   print("Units Consumed : $units");
   print("Price/Unit     : Rs. ${pricePerUnit.toStringAsFixed(2)}");
-  print("Base Bill      : Rs. ${bill.toStringAsFixed(2)}");
-  print("Tax (10%)      : Rs. ${tax.toStringAsFixed(2)}");
+  print("Base Bill      : Rs. ${bill.toStringAsFixed(3)}");
+  print("Tax (25%)      : Rs. ${tax.toStringAsFixed(3)}");
   print("------------------------------");
   print("Total Bill     : Rs. ${total.toStringAsFixed(2)}");
   print("==============================");
