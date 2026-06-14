@@ -5,7 +5,7 @@ bool isValidYear(int birthYear) {
   if (birthYear < 1900 || birthYear > currentYear) {
     return false;
   }
-  return true; // valid year
+  return true;
 }
 
 bool isAdult(int age) {
