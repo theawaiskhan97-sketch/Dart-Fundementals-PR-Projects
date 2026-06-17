@@ -1,15 +1,22 @@
 import 'dart:io';
 
-// This is the function which checks wheter the gae is valid or not the age muxt be in between 1990-2026
+/// Age Calculator Program
+/// This program takes the user's birth year, validates it, and calculates their age.
+/// It also checks if the user is an adult (>= 18 years old) or a senior citizen (>= 40 years old).
+
+/// Checks whether the provided birth year is within a valid range.
+/// A valid birth year must be between 1800 and the current year (2026).
 bool validyear(int birthyear) {
   int currentyear = 2026;
+  // Birth year must not be before 1800 or in the future
   if (birthyear < 1800 || birthyear > currentyear) {
     return false;
   }
   return true;
 }
 
-// This is another function which checks if the person is adult or not
+/// Checks if a person is considered an adult based on their age.
+/// Returns true if the age is 18 or above, otherwise false.
 bool isadult(int age) {
   if (age >= 18) {
     return true;
@@ -18,34 +25,41 @@ bool isadult(int age) {
 }
 
 void main() {
-  // Here we are taking the input from the user
   print("----Age Calculator----");
-  stdout.write("Enter your Birth Year:");
+  
+  // Prompt the user to enter their birth year
+  stdout.write("Enter your Birth Year: ");
   int birthyear = int.parse(stdin.readLineSync()!);
-  // using bool to store the result of valid year
+  
+  // Validate the birth year using the validyear function
   bool isValidyear = validyear(birthyear);
   int age = 0;
+  
   if (isValidyear == false) {
+    // Notify the user if the input year is outside the acceptable range
     print("Invalid Birth year! Enter Birth year between 1990 to 2026");
   } else {
+    // Calculate and print the age based on the current year (2026)
     int currentyear = 2026;
     age = currentyear - birthyear;
     print("Your Age is: $age years old");
   }
-  // using bool to store the result of the person adlut or not
+  
+  // Determine if the person is an adult
   bool adult = isadult(age);
   if (adult == true) {
     print("You are an Adult");
   } else {
     print("You are not an Adult");
   }
-  // Bool directly in condition
+  
+  // Determine if the person is a senior citizen (40 years or older)
   bool isSenior = age >= 40;
   if (isSenior) {
     print('You are also a Senior Citizen.');
   }
 
-  // Bool with String interpolation
+  // Print summary statuses using String interpolation
   print('Adult status: $adult');
   print('Senior status: $isSenior');
 }
